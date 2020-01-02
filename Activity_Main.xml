@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF5722"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="158dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="107dp"
+        android:background="#03A9F4"
+
+        android:text="進入測試"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:text="你擁有什麼樣的性格？"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+   
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8BC34A"
+        android:text="心理測試"
+        android:textColor="#3F51B5"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="測試結果僅供參考"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/what2" />
+
+    <ImageView
+        android:id="@+id/what"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv3"
+        app:layout_constraintEnd_toStartOf="@+id/what2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv2"
+        app:srcCompat="@drawable/what" />
+
+    <ImageView
+        android:id="@+id/what2"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        app:srcCompat="@drawable/what2"
+        app:layout_constraintBottom_toTopOf="@+id/tv3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/what"
+        app:layout_constraintTop_toBottomOf="@+id/tv2"/>
+
+    <ImageView
+        android:id="@+id/what3"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        app:srcCompat="@drawable/what3"
+        app:layout_constraintBottom_toTopOf="@+id/tv3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
