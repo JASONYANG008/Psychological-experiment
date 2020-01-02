@@ -11,9 +11,22 @@ public class MainActivity extends AppCompatActivity {
         ed_name =findViewById(R.id.ed_name);
 
  button.setOnClickListener(new View.OnClickListener() {
-
             @Override
-            public void onClick(View v) { }
+            public void onClick(View v) {
+            
+                if(ed_name.length()<1)
+                        Toast.makeText(MainActivity.this,"你需要輸入測試者姓名",Toast.LENGTH_SHORT).show();
+                else{
+                    //呼叫getSharedPreferences()方法，產生一個檔名為test.xml的設定儲存檔，並只供本專案(app)可讀取，物件名稱為pref。
+                    SharedPreferences pref =getSharedPreferences("test",MODE_PRIVATE);
+                    //呼叫edit()方法取得編輯器物件，此時使用匿名方式呼叫Editor的putString()方法將ed_name字串的內容寫入設定檔，資料標籤為"name"。
+                    //最後必須呼叫commit()方法，此時資料才真正寫入到設定檔中。
+                    pref.edit().putString("name",ed_name.getText().toString()).commit();
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    startActivity(intent);
+                    finish();
+                }
+             }
         });
 
      }
