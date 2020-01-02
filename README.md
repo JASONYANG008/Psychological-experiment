@@ -2,7 +2,7 @@
 TeamWork
 
 108AE4004楊家雄（master）
-Responsible part:MainActivity.java~EndActivity.java
+Responsible part:MainActivity.java~EndActivity.java,media.mp4
 
 108AE5001葉佳曼（yipkaiman）
 Responsible part:Activity_Main2.xml~Activity_Main4.xml
