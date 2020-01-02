@@ -1,5 +1,5 @@
 # Psychological-experiment
-teamwork
+TeamWork
 
 108AE4004楊家雄
 108AE5001葉佳曼
