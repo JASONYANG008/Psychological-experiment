@@ -1,0 +1,20 @@
+public class MainActivity extends AppCompatActivity {
+
+    private Button button;
+    private EditText ed_name;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        button = findViewById(R.id.button);
+        ed_name =findViewById(R.id.ed_name);
+
+ button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { }
+        });
+
+     }
+    }
