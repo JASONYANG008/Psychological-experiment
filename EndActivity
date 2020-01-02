@@ -1,0 +1,52 @@
+public class EndActivity extends AppCompatActivity {
+    TextView tv_final;
+    int count=0;//記錄成績
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_end);
+
+        tv_final=findViewById(R.id.tv_final);
+
+        //把每頁作答的成績加起來
+        SharedPreferences pref =getSharedPreferences("page",MODE_PRIVATE);
+        count+= pref.getInt("page3",count);
+        count+= pref.getInt("page2",count);
+        count+= pref.getInt("page1",count);
+
+
+        //先取得SharedPreferences物件。取得標籤”name”的設定值，getString方法的第二個參數是預設值(default)
+        // 當讀取不到或設定檔內無該設定值時，會傳回這個預設值。
+        //把首頁記錄的測試者姓名呼叫出來
+        String name = getSharedPreferences("test",MODE_PRIVATE)
+                .getString("name","");
+        //把佈局文件中的文本框和textview鏈接起來
+        TextView textView =  findViewById(R.id.tv_final);
+        //在textview中顯示出來message
+        textView.setText(name);
+        if(count>21){
+            tv_final.setText(name+"你得到了"+count+"分。\n這表示你只有在極需要的情況下或者對方與你志同道合時，" +
+                    "才同別人作較為深入的交談，但你仍不會把交談作為發展友情的主要途徑。除非對方願意主動頻頻跟你接觸，否則你便總處於孤獨的個人世界裡。");
+        }
+        else if(count>14 && count<22){
+            tv_final.setText(name+"你得到了"+count+"分。\n你大概比較熱衷跟別人做朋友。如果你與對方不熟識，" +
+                    "你開始會很內向似的，不大願意跟對方交談。但時間久了，你便樂意常常搭話，彼此談得來。");
+        }
+        else{
+            tv_final.setText(name+"你得到了"+count+"分。\n這表示你與別人交談不成問題。你非常懂得交際，" +
+                    "較易用產生一種熱烈氣氛鼓勵人家多開口，同你談得攏，彼此十分投機。");
+        }
+    }
+    public void go_start(View v){
+        Intent it =new Intent(this,MainActivity.class) ;
+        startActivity(it);
+        finish();
+    }
+    public void go_again(View v){
+        Intent it =new Intent(this,Main2Activity.class) ;
+        startActivity(it);
+        finish();
+    }
+
+}
